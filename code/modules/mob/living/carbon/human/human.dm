@@ -421,7 +421,7 @@
 
 			var/datum/computer_file/report/crew_record/R = get_crewmember_record(perpname)
 			if(R)
-				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.get_criminalStatus()) in GLOB.security_statuses as null|text
+				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.get_criminalStatus()) as null|anything in GLOB.security_statuses
 				if(hasHUD(usr, HUD_SECURITY) && setcriminal)
 					R.set_criminalStatus(setcriminal)
 					modified = 1
@@ -470,7 +470,7 @@
 
 			var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 			if(E)
-				var/setmedical = input(usr, "Specify a new medical status for this person.", "Medical HUD", E.get_status()) in GLOB.physical_statuses as null|text
+				var/setmedical = input(usr, "Specify a new medical status for this person.", "Medical HUD", E.get_status()) as null|anything in GLOB.physical_statuses
 				if(hasHUD(usr, HUD_MEDICAL) && setmedical)
 					E.set_status(setmedical)
 					modified = 1
@@ -875,7 +875,7 @@
 	for(var/obj/item/organ/external/organ in organs)
 		if(clean_feet || (organ.organ_tag in list(BP_L_HAND,BP_R_HAND)))
 			organ.gunshot_residue = null
-	
+
 	if(clean_feet && !shoes)
 		feet_blood_color = null
 		feet_blood_DNA = null
@@ -1051,7 +1051,7 @@
 	if(LAZYLEN(species.descriptors))
 		descriptors = list()
 		for(var/desctype in species.descriptors)
-			var/datum/mob_descriptor.descriptor = species.descriptors[desctype]
+			var/datum/mob_descriptor/descriptor = species.descriptors[desctype]
 			descriptors[desctype] = descriptor.default_value
 
 	if(!(species.appearance_flags & HAS_UNDERWEAR))
@@ -1405,7 +1405,7 @@
 	var/bpm = get_pulse_as_number()
 	if(bpm >= PULSE_MAX_BPM)
 		return method ? ">[PULSE_MAX_BPM]" : "extremely weak and fast, patient's artery feels like a thread"
-	
+
 	return "[method ? bpm : bpm + rand(-10, 10)]"
 // output for machines ^	 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ output for people
 
