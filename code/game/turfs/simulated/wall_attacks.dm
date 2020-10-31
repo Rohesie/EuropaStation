@@ -86,7 +86,7 @@
 /turf/simulated/wall/attackby(var/obj/item/W, var/mob/user)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if (!user.)
+	if (!istype(user, /mob/living/carbon/human) && ticker?.mode.name != "monkey")
 		user << "<span class='warning'>You don't have the dexterity to do this!</span>"
 		return
 

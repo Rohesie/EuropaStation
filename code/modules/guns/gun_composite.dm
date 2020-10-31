@@ -126,7 +126,7 @@
 		if(!isnull(model.produced_by.weight))
 			w_class = round(w_class * model.produced_by.weight)
 
-	w_class = Clamp(w_class,1,5)
+	w_class = clamp(w_class,1,5)
 
 	if(dam_type == GUN_TYPE_LASER)
 		recoil = 0

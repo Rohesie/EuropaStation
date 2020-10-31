@@ -405,7 +405,7 @@
 	//It's easier to break out of a grab by a smaller mob
 	break_strength += max(size_difference(affecting_mob, assailant), 0)
 
-	var/break_chance = break_chance_table[Clamp(break_strength, 1, break_chance_table.len)]
+	var/break_chance = break_chance_table[clamp(break_strength, 1, break_chance_table.len)]
 	if(prob(break_chance))
 		if(grab_name)
 			affecting_mob.visible_message("<span class='warning'>\The [affecting_mob] has broken free of [assailant]'s [grab_name]!</span>")

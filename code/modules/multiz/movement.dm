@@ -176,6 +176,5 @@
 
 	return FALSE
 
-#undef CLIMBABLE_NEVER
 #undef CLIMBABLE_EASY
 #undef CLIMBABLE_HARD

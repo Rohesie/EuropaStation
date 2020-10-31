@@ -233,7 +233,7 @@
 	if(in_stasis)
 		return
 
-	radiation = Clamp(radiation,0,100)
+	radiation = clamp(radiation,0,100)
 
 	if(!radiation)
 		if(species.appearance_flags & RADIATION_GLOWS)

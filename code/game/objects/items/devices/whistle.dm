@@ -26,8 +26,8 @@
 		use_message = capitalize(copytext(sanitize(new_message), 1, MAX_MESSAGE_LEN))
 
 	usr << "You configure the hailer to shout \"[use_message]\"."
-/
-obj/item/hailer/attack_self(var/mob/living/carbon/user)
+
+/obj/item/hailer/attack_self(var/mob/living/carbon/user)
 	if (spamcheck)
 		return
 

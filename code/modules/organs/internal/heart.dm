@@ -37,9 +37,9 @@
 
 		else if(owner.status_flags & FAKEDEATH || owner.chem_effects[CE_NOPULSE])
 			pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be inflienced by meds
-			pulse = Clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_NONE, PULSE_2FAST)
+			pulse = clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_NONE, PULSE_2FAST)
 		else
-			pulse = Clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_SLOW, PULSE_2FAST)
+			pulse = clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_SLOW, PULSE_2FAST)
 
 /obj/item/organ/internal/heart/proc/handle_heartbeat()
 	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || is_below_sound_pressure(get_turf(owner)))

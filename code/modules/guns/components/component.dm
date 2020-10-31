@@ -107,9 +107,9 @@
 /obj/item/gun_component/attackby(var/obj/item/thing, var/mob/user)
 	if(thing.isscrewdriver())
 		var/offset = input(user,"New vertical offset:","Part offset",pixel_y)
-		pixel_y = Clamp(offset,-world.icon_size,world.icon_size)
+		pixel_y = clamp(offset,-world.icon_size,world.icon_size)
 		offset = input(user,"New horizontal offset:","Part offset",pixel_x)
-		pixel_x = Clamp(offset,-world.icon_size,world.icon_size)
+		pixel_x = clamp(offset,-world.icon_size,world.icon_size)
 	else
 		..()
 

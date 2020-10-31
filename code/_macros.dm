@@ -1,7 +1,6 @@
 #define PUBLIC_GAME_MODE (ticker ? (ticker.hide_mode == 0 ? master_mode : "Secret") : "Unknown")
 
-#define Clamp(x, y, z) 	(x <= y ? y : (x >= z ? z : x))
-#define CLAMP01(x) 		(Clamp(x, 0, 1))
+#define CLAMP01(x) (clamp(x, 0, 1))
 
 #define get_turf(A) get_step(A,0)
 
@@ -52,8 +51,6 @@
 #define issilicon(A) istype(A, /mob/living/silicon)
 
 #define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
-
-#define isairlock(A) istype(A, /obj/machinery/door/airlock)
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 

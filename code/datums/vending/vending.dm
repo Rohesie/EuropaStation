@@ -1,6 +1,6 @@
-#define CAT_NORMAL 1
-#define CAT_HIDDEN 2  // also used in corresponding wires/vending.dm
-#define CAT_COIN   4
+#define CAT_NORMAL (1<<0)
+#define CAT_HIDDEN (1<<1)
+#define CAT_COIN (1<<2)
 
 /**
  *  Datum used to hold information about a product in a vending machine

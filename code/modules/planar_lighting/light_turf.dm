@@ -14,7 +14,7 @@
 		for(var/thing in affecting_lights)
 			var/obj/effect/light/L = thing
 			lumcount += max(1,L.current_power - max(0,(get_dist(get_turf(L), src)-2)))
-		lumcount = Clamp(lumcount,0,10)
+		lumcount = clamp(lumcount,0,10)
 	return lumcount
 
 // Checks if the turf contains an occluding object or is itself an occluding object.

@@ -171,11 +171,7 @@
 			NextToken() //skip function name
 			if(!CheckToken("(", /token/symbol)) //Check for and skip open parenthesis
 				return
-			var/loops = 0
-			for()
-				loops++
-				if(loops>=6000)
-					CRASH("Something TERRIBLE has gone wrong in ParseFunctionStatement ;__;")
+			for(var/i in 1 to 6000)
 
 				if(!curToken)
 					errors+=new/scriptError/EndOfFile()
@@ -187,3 +183,5 @@
 				var/node/expression/P=ParseParamExpression()
 				stmt.parameters+=P
 				if(istype(curToken, /token/symbol) && curToken.value==",") NextToken()
+
+			CRASH("Something TERRIBLE has gone wrong in ParseFunctionExpression, over 6000 loops without a find ;__;")

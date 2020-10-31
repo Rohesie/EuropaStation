@@ -25,6 +25,7 @@
 #define CELEBRITY_DEATH 23
 #define RESIGNATION 24
 
+/*
 #define DEFAULT 1
 
 #define ADMINISTRATIVE 2
@@ -45,6 +46,7 @@
 #define BIOMEDICAL 14
 
 #define GEAR_EVA 15
+*/
 
 //Note that you have to specify each subspecies individually. Shouldn't be a big deal.
 /var/list/economic_species_modifier = list(

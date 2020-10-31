@@ -1,7 +1,3 @@
-#define SOLID 1
-#define LIQUID 2
-#define GAS 3
-
 #define BOTTLE_SPRITES list("bottle-1", "bottle-2", "bottle-3", "bottle-4") //list of available bottle sprites
 #define REAGENTS_PER_SHEET 20
 
@@ -111,21 +107,21 @@
 
 			if(href_list["amount"])
 				var/id = href_list["add"]
-				var/amount = Clamp((text2num(href_list["amount"])), 0, 200)
+				var/amount = clamp((text2num(href_list["amount"])), 0, 200)
 				R.trans_id_to(src, id, amount)
 
 		else if (href_list["addcustom"])
 
 			var/id = href_list["addcustom"]
 			useramount = input("Select the amount to transfer.", 30, useramount) as num
-			useramount = Clamp(useramount, 0, 200)
+			useramount = clamp(useramount, 0, 200)
 			src.Topic(null, list("amount" = "[useramount]", "add" = "[id]"))
 
 		else if (href_list["remove"])
 
 			if(href_list["amount"])
 				var/id = href_list["remove"]
-				var/amount = Clamp((text2num(href_list["amount"])), 0, 200)
+				var/amount = clamp((text2num(href_list["amount"])), 0, 200)
 				if(mode)
 					reagents.trans_id_to(beaker, id, amount)
 				else
@@ -136,7 +132,7 @@
 
 			var/id = href_list["removecustom"]
 			useramount = input("Select the amount to transfer.", 30, useramount) as num
-			useramount = Clamp(useramount, 0, 200)
+			useramount = clamp(useramount, 0, 200)
 			src.Topic(null, list("amount" = "[useramount]", "remove" = "[id]"))
 
 		else if (href_list["toggle"])
@@ -159,7 +155,7 @@
 
 			if (href_list["createpill_multiple"])
 				count = input("Select the number of pills to make.", "Max [max_pill_count]", pillamount) as num
-				count = Clamp(count, 1, max_pill_count)
+				count = clamp(count, 1, max_pill_count)
 
 			if(reagents.total_volume/count < 1) //Sanity checking.
 				return

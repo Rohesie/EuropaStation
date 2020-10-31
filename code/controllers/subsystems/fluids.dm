@@ -16,7 +16,7 @@ var/datum/controller/subsystem/fluids/SSfluids
 
 	var/tmp/active_fluids_copied_yet = FALSE
 	var/af_index = 1
-	var/downward_fluid_overlay_position = 1 // Bit of an odd hack, set in fluid spread code to determine which overlay \
+	var/downward_fluid_overlay_position = 1 // Bit of an odd hack, set in fluid spread code to determine which overlay
 	                                        // in the list is 'down'. More maintainer-friendly than hardcoding it.
 	var/flooded_a_neighbor = 0              // not actually used, defined so the neighbor flood macro compiles/runs properly.
 
